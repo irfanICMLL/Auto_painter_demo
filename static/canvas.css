@@ -1,0 +1,121 @@
+#myCanvas {
+    border:1px solid #c3c3c3;
+}
+
+#transBtn {
+    width: 115px;
+    height: 70px;
+    font-size: 18px;
+    font-family: Arial;
+    letter-spacing: 2px;
+    padding-left: 0px;
+    border-radius: 5px;
+    margin: 10px 10px;
+    background: -webkit-linear-gradient(top, #66B5E6, #2e88c0);
+    background: -moz-linear-gradient(top, #66B5E6, #2e88c0);
+    background: linear-gradient(top, #66B5E6, #2e88c0);
+    background: -ms-linear-gradient(top, #66B5E6, #2e88c0);
+    border: 1px solid #2576A8;
+    box-shadow: 0 1px 2px #B8DCF1 inset, 0 -1px 0 #316F96 inset;
+    color: #fff;
+    text-shadow: 1px 1px 0.5px #22629B;
+}
+
+#funcBtn, #import {
+    width: 150px;
+    height: 30px;
+    font-size: 18px;
+    font-family: Arial;
+    letter-spacing: 4px;
+    padding-left: 12px;
+    border-radius: 5px;
+    margin: 10px auto;
+    background: -webkit-linear-gradient(top, #66B5E6, #2e88c0);
+    background: -moz-linear-gradient(top, #66B5E6, #2e88c0);
+    background: linear-gradient(top, #66B5E6, #2e88c0);
+    background: -ms-linear-gradient(top, #66B5E6, #2e88c0);
+    border: 1px solid #2576A8;
+    box-shadow: 0 1px 2px #B8DCF1 inset, 0 -1px 0 #316F96 inset;
+    color: #fff;
+    text-shadow: 1px 1px 0.5px #22629B;
+}
+#funcBtn:hover, #import:hover, #transBtn:hover {
+    background: -webkit-linear-gradient(top, #8DC9EF, #4E9FD1);
+    background: -moz-linear-gradient(top, #8DC9EF, #4E9FD1);
+    background: linear-gradient(top, #8DC9EF, #4E9FD1);
+    background: -ms-linear-gradient(top, #8DC9EF, #4E9FD1);
+}
+
+
+div.container {
+    width:100%;
+    margin:0px;
+    border:1px solid gray;
+    line-height:150%;
+}
+div.header,div.footer {
+    padding:0.5em;
+    color:white;
+    background-color:gray;
+    clear:left;
+}
+h1.header {
+    padding:0;
+    margin:0;
+}
+div.left {
+    float:left;
+    width:160px;
+    margin:0;
+    padding:1em;
+}
+div.content {
+    margin-left:190px;
+    border-left:1px solid gray;
+    padding:1em;
+}
+div.canvas_container {
+    width:100%;
+    margin:0px;
+    line-height:150%;
+}
+div.canvas_tools {
+    padding:0.5em;
+    clear:left;
+}
+
+div.canvas_myCanvas, div.canvas_output {
+    float:left;
+    width:515px;
+}
+div.canvas_trans {
+    float:left;
+    margin: 125px auto;
+    width:135px;
+}
+
+#colorBtn {
+    width: 50px;
+    height: 50px;
+}
+
+#files {
+    display: none;
+}
+
+#progress {
+    float:left
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+
+}
+
+@media only screen and (min-width: 321px) and (max-width: 1024px){
+
+}
+
+@media only screen and (min-width: 1029px){
+
+
+}

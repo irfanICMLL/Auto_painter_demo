@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Demos</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='spectrum.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='spectrum.js') }}"></script>
+   
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='canvas.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="header">Auto-Painter</h1>
+        </div>
+
+        <div class="left">
+            <br/>
+            <input type="file" id="files" name="files" onchange="selectImage();" />
+            <input type="button" id="import" value="import" />
+            <button id="funcBtn" onclick="cInit();">init</button>
+            <button id="funcBtn" onclick="cSketchify();">sketchify</button>
+            <hr/>
+            <button id="funcBtn" onclick="cReset();">reset</button>
+            <button id="funcBtn" onclick="cRedo();">redo</button>
+            <button id="funcBtn" onclick="cUndo();">undo</button>
+            <button id="funcBtn" onclick='linecolor="white";'>erase</button>
+        </div>
+        <div class="content">
+            <div class="canvas_container">
+                <div class="canvas_top">
+                    <div class="canvas_myCanvas">
+                        <canvas id="myCanvas" width="512" height="512">
+                            你的浏览器不支持HTML5
+                        </canvas>
+                    </div>
+                    <div class="canvas_trans">
+                        <button id="transBtn" onclick="transformWithoutColor();">Transform1</button>
+                        <button id="transBtn" onclick="transformWithColor();">Transform2</button>
+                        <button id="transBtn" onclick="transformCartoon();">Transform3</button>
+                    </div>
+                    <div class="canvas_output">
+                        <img src="" id="imgResult" width="512" height="512">
+                        <progress id="progress" value="0" max="100"></progress>
+                    </div>
+                </div>
+                <div class="canvas_tools">
+                    <br /> colour: <button id="colorBtn" style="background-color:yellow;" onclick='linecolor="yellow";'></button>
+                    <button id="colorBtn" style="background-color:#00FF00;" onclick='linecolor="#00FF00";'></button>
+                    <button id="colorBtn" style="background-color:red;" onclick='linecolor="red";'></button>
+                    <button id="colorBtn" style="background-color:blue;" onclick='linecolor="blue";'></button>
+                    <button id="colorBtn" style="background-color:green;" onclick='linecolor="green";'></button>
+                    <button id="colorBtn" style="background-color:#E238EC;" onclick='linecolor="#E238EC";'></button>
+                    <button id="colorBtn" style="background-color:#FDD017;" onclick='linecolor="#FDD017";'></button>
+                    <button id="colorBtn" style="background-color:navy;" onclick='linecolor="navy";'></button>
+                    <button id="colorBtn" style="background-color:lightblue;" onclick='linecolor="lightblue";'></button>
+                    <button id="colorBtn" style="background-color:gray;" onclick='linecolor="gray";'></button>
+                    <button id="colorBtn" style="background-color:black;" onclick='linecolor="black";'></button>
+                    <input id="full" />
+                    <br />stroke: <button id="colorBtn" style="background-color:white;" onclick="linw = 1;">1px</button>
+                    <button id="colorBtn" style="background-color:white;" onclick="linw = 2;">2px</button>
+                    <button id="colorBtn" style="background-color:white;" onclick="linw = 4;">4px</button>
+                    <button id="colorBtn" style="background-color:white;" onclick="linw = 8;">8px</button>
+                    <button id="colorBtn" style="background-color:white;" onclick="linw = 16;">16px</button>
+                    <br />
+                    <div>
+                        <p>Tips:</p>
+                        <p>Import: Import a colorful picture or your line sketch.</p>
+                        <p>Init: Initialize a random sketch of minion.</p>
+                        <p>Sketchify: Transform the color image into a sketch.</p>
+                        <p>Transfrom1: Using for coloring minions without color control.</p>
+                        <p>Transform2: Using for coloring anime without color control. </p>
+                        <p>Transform3: Using for coloring anime with color control. </p>
+                        <p> You can modified the sketch or draw something with the canvas or make color control blocks on the
+                            sketch. Choose an appropriate model to transfer your sketch~</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            Copyright 2017 by Beihang University.
+        </div>
+    </div>
+    <!-- privious -->
+    <!--
+    <div class="container">
+      <div class="page-header">
+        <h1><a href="/">Demo</a></h1>
+      </div>
+      {% if has_result %}
+      <div>
+        <img width="256" height="256" src={{ image1 }}>
+        <img width="256" height="256" src={{ image2 }}>
+      </div>
+      <hr>
+      {% endif %}
+
+      <form id="formupload" class="form-inline" role="form" action="do" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="imagefile">upload a sketch generated below or drawn by yourself, and get the colored one:</label>
+          <input type="file" name="imagefile" id="imagefile">
+        </div>
+        <input type="submit" class="btn btn-primary" value="paint" id="classifyfile"></input>
+      </form>
+      <br>
+      <br>
+      <br>
+      <br>
+      <form id="formupload" class="form-inline" role="form" action="sketchify1" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="imagefile">upload a color picture or a photo to generate the sketch:</label>
+          <input type="file" name="imagefile" id="imagefile">
+        </div>
+        <input type="submit" class="btn btn-primary" value="sketch" id="classifyfile2"></input>
+      </form>
+    </div>
+      <hr>
+
+    <hr>
+    -->
+    <!--privious-->
+ <script type="text/javascript" src="{{ url_for('static', filename='canvas.js') }}"></script>
+</body>
+
+</html>
